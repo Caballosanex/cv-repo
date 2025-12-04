@@ -1,0 +1,106 @@
+BasicInfo:
+  FirstName: Àlex
+  LastName: Sánchez Blabia
+  Photo: img/FotoCarnet.jpg
+  Contacts:
+    - Icon: fas fa-envelope
+      Info: alexsanchezblabia@gmail.com
+    - Icon: fas fa-map-marker-alt
+      Info: Barcelona
+    - Icon: fab fa-linkedin
+      Info: <a class="contact__link" href="https://linkedin.com/in/alex-sanchez-blabia" target="_blank">linkedin.com/in/alex-sanchez-blabia</a>
+    - Icon: fab fa-github
+      Info: <a class="contact__link" href="https://github.com/Caballosanex" target="_blank">github.com/Caballosanex</a>
+
+Profile: Administrador Junior de Sistemes i Xarxes amb més de 2 anys d'experiència pràctica en suport IT i manteniment de sistemes. Actualment ampliant coneixements mitjançant estudis avançats a iTIC Barcelona i 42 Barcelona, amb un fort enfocament en ciberseguretat i hacking ètic. Experiència demostrada en suport help desk, resolució d'incidències i administració de xarxes. Competent tant en entorns Windows com Linux, amb experiència pràctica en infraestructura cloud i implementacions de seguretat.
+
+Experience:
+  - Employer: Fractalia Systems
+    Place: L'Hospitalet de Llobregat
+    Positions:
+      - Title: Tècnic Help Desk N1
+        Date: Nov 2022 - Ago 2024
+        Details:
+          - Servei de Call Center i gestió d'eines de ticketing
+          - Gestió d'una centraleta telefònica amb 10 línies disponibles, atenent una mitjana de 200 trucades setmanals de proveïdors externs de Telefónica i empleats de CaixaBank
+          - Responsable de la resolució d'incidències dels sistemes de l'empresa i incidències en xarxes mòbils com a tècnic N1
+          - Col·laboració en la creació de més del 50% dels informes de servei
+        Badges: ['Help Desk', 'Ticketing', 'Resolució Incidències', 'Suport Tècnic', 'Call Center']
+  - Employer: Red Computer Barcelona
+    Place: Barcelona
+    Positions:
+      - Title: Pràctiques IT
+        Date: Mar 2022 - Jun 2022
+        Details:
+          - Manteniment de Sistemes per a petites i mitjanes empreses amb un pressupost entre 2.000€ i 4.000€
+          - Administració d'usuaris i recursos compartits per a particulars i PIMES
+          - Configuració d'equips, manteniment d'eines, aplicacions, xarxes
+          - Instal·lació i administració d'aplicacions empresarials
+          - Tasques de suport Help Desk tant localment com en remot
+          - Muntatge i reparació d'equips, amb una mitjana de 5 ordinadors diaris
+        Badges: ['Administració Sistemes', 'Help Desk', 'Manteniment', 'Suport Remot']
+
+Education:
+  - Course: Cicle Formatiu de Grau Superior en Administració de Sistemes i Xarxes
+    Place: Institut TIC de Barcelona
+    Date: Set 2024 - Actualitat
+    Details: Administració de sistemes operatius de servidor i serveis de xarxa. Implementació i gestió de bases de dades. Optimització del rendiment del sistema. Disseny d'infraestructura de xarxa. Solucions d'alta disponibilitat i seguretat del sistema.
+  - Course: Desenvolupador de Software
+    Place: 42 Barcelona
+    Date: Jun 2022 - Ago 2024
+    Details: Desenvolupament d'habilitats avançades de programació en C i C++. Implementació de serveis de xarxa complexos i solucions de gestió de bases de dades. Disseny i optimització d'infraestructura de sistemes. Creació de solucions de software escalables amb focus en l'optimització del rendiment.
+  - Course: Cicle Formatiu de Grau Mitjà en Sistemes Microinformàtics i Xarxes
+    Place: Institut Mare de Déu de la Mercè
+    Date: Ago 2020 - Jun 2022
+    Details: Aplicacions ofimàtiques i seguretat informàtica. Sistemes operatius monousuari i en xarxa. Xarxes d'Àrea Local (LAN) i Xarxes d'Accés Sense Fils (WAN). Projecte Final - Creació d'un servei de virtualització central utilitzant IsardVDI.
+
+Skills:
+  - Family: Sistemes i Infraestructura
+    Items:
+      - Sistemes Operatius
+      - Windows
+      - Linux
+      - Infraestructura On Premise
+      - Infraestructura Cloud
+      - Auto Allotjament
+  - Family: Xarxes
+    Items:
+      - Xarxes LAN i WAN
+      - Cisco IOS
+      - Configuració de Xarxes
+      - Protocols de Seguretat
+  - Family: Ciberseguretat
+    Items:
+      - Proves de Penetració
+      - Hacking Ètic
+      - Seguretat Informàtica
+      - Implementacions de Seguretat
+  - Family: Suport i Gestió
+    Items:
+      - Suport Tècnic
+      - Help Desk
+      - Resolució d'Incidències
+      - Muntatge de PC
+      - Suite Office 365
+  - Family: Programació
+    Items:
+      - Programació en C
+      - C++
+      - Programació en Bash
+      - Bases de Dades SQL
+
+Languages:
+  - Name: Català
+    Level: Natiu
+  - Name: Castellà
+    Level: Natiu
+  - Name: Anglès
+    Level: Professional Complet
+  - Name: Francès
+    Level: Professional Limitat
+
+Diplomas:
+  - Introduction to Cybersecurity - CISCO (07/2023)
+  - CCNA Introduction to Networks (02/2025)
+  - B2 First - Cambridge (09/2020)
+  - Bootcamp de Cyberseguretat - 42 Barcelona (05/2023)
