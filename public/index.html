@@ -396,37 +396,42 @@
         </div>
     </div>
 
-    <!-- Carregar configuració de l'API (generat per Terraform) -->
+    <!-- Carregar configuració de l'API -->
     <script src="/config.js"></script>
 
     <script>
-        // Comptador de visites - API Gateway (endpoint dinàmic)
+        // Comptador de visites amb polling cada 60s
         (function() {
-            // Verificar que config.js s'ha carregat
             if (typeof API_CONFIG === 'undefined') {
-                console.error('Error: config.js no s\'ha carregat correctament');
+                console.error('Error: config.js no carregat');
                 document.getElementById('visit-counter').textContent = '---';
                 return;
             }
 
-            console.log('API Endpoint:', API_CONFIG.endpoint);
-            console.log('Config generat:', API_CONFIG.generatedAt);
+            function updateCounter(increment = false) {
+                const url = increment
+                    ? `${API_CONFIG.endpoint}?increment=true`
+                    : `${API_CONFIG.endpoint}?increment=false`;
 
-            // Fetch al endpoint dinàmic
-            fetch(API_CONFIG.endpoint)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    document.getElementById('visit-counter').textContent = data.visits;
-                })
-                .catch(error => {
-                    console.error('Error fetching visit count:', error);
-                    document.getElementById('visit-counter').textContent = '---';
-                });
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network error');
+                        return response.json();
+                    })
+                    .then(data => {
+                        document.getElementById('visit-counter').textContent = data.visits;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        document.getElementById('visit-counter').textContent = '---';
+                    });
+            }
+
+            // Primera càrrega: incrementar
+            updateCounter(true);
+
+            // Polling cada 60s: només llegir
+            setInterval(() => updateCounter(false), 60000);
         })();
     </script>
 </body>
