@@ -1,0 +1,44 @@
+name: Telegram Commit Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Send Telegram notification
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          # Get commit details
+          REPO="${{ github.repository }}"
+          BRANCH="${{ github.ref_name }}"
+          AUTHOR="${{ github.actor }}"
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          COMMIT_URL="${{ github.event.head_commit.url }}"
+          COMMIT_SHA=$(git rev-parse --short HEAD)
+          
+          # Format message
+          MESSAGE="*New Commit*%0A%0A"
+          MESSAGE+="*Repo:* ${REPO}%0A"
+          MESSAGE+="*Branch:* ${BRANCH}%0A"
+          MESSAGE+="*By:* ${AUTHOR}%0A"
+          MESSAGE+="*Message:* ${COMMIT_MSG}%0A"
+          MESSAGE+="[View Commit](${COMMIT_URL})"
+          
+          # Send to Telegram
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="${MESSAGE}" \
+            -d parse_mode="Markdown" \
+            -d disable_web_page_preview=true
